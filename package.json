@@ -27,7 +27,7 @@
     "name": "Your Name",
     "email": "yourname@email.com"
   },
-  "license": "MIT",
+  "license": "GNUv3",
   "licenseFilename": "LICENSE",
   "readmeFilename": "README.md",
   "peerDependencies": {
