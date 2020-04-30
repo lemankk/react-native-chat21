@@ -1,0 +1,31 @@
+import { Method } from "axios";
+import { EventEmitter } from "react-native";
+import { FirebaseDatabaseTypes } from "@react-native-firebase/database";
+import { FirebaseAuthTypes } from "@react-native-firebase/auth";
+import { FirebaseMessagingTypes } from "@react-native-firebase/messaging";
+import { ChatManagerConfig } from "./config";
+import { IUser } from "../../models";
+export declare type RequestOfflineCallback = () => void;
+export declare type RequestOnlineCallback = (userId: IUser) => void;
+export declare class ChatManagerInstance {
+    private _config;
+    private _onRequestOffline;
+    private _onRequestOnline;
+    private _events;
+    constructor(_config: ChatManagerConfig, _onRequestOffline: RequestOfflineCallback, _onRequestOnline: RequestOnlineCallback);
+    get config(): ChatManagerConfig;
+    get events(): EventEmitter;
+    get tenant(): string;
+    get appId(): string;
+    set appId(val: string);
+    get auth(): FirebaseAuthTypes.Module;
+    get database(): FirebaseDatabaseTypes.Module;
+    get messaging(): FirebaseMessagingTypes.Module;
+    getDbPath(path?: string): string;
+    getDbRef(path?: string): FirebaseDatabaseTypes.Reference;
+    getAppApiUrl(path?: string): string;
+    getImageUrlThumb(uid: string): string;
+    goOnline(user: IUser): void;
+    goOffline(): void;
+    httpRequest(method: Method, path: string, options?: any): Promise<any>;
+}
