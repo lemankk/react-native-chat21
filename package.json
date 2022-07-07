@@ -55,7 +55,7 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
-    "moment": "^2.24.0",
+    "moment": "^2.29.4",
     "rxjs": "^6.5.5",
     "tslint": "^6.1.2",
     "typescript": "^3.8.3"
